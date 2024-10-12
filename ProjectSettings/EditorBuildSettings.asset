@@ -5,13 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/WhiteRabbitDemoScene.unity
     guid: deb62720127dc7547a65fd1e3c556a29
+  - enabled: 0
+    path: Assets/Scenes/loseScreen.unity
+    guid: f6a872e0f768d614a9cd375b4173c827
   - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: f7f50e147d1551948887e36cc55ffd18
+  - enabled: 1
+    path: Assets/Scenes/Level.unity
+    guid: 5e7af4bd95ac53a4cb784a9eedf8f6f9
+  - enabled: 0
     path: Assets/Scenes/winScreen.unity
     guid: b5dc1d9b1a49c9141a8819aedce895bd
   - enabled: 1
-    path: Assets/Scenes/loseScreen.unity
-    guid: f6a872e0f768d614a9cd375b4173c827
+    path: Assets/Scenes/Win.unity
+    guid: 72eb4d796a7c41343b88082270a60e95
   m_configObjects: {}
