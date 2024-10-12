@@ -28,3 +28,4 @@ public class AttackScript : MonoBehaviour
         }
     }
 }
+//ghj
