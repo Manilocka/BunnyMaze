@@ -33,6 +33,7 @@ namespace DialogueEditor
         public static ConversationStartEvent OnConversationStarted;
         public static ConversationEndEvent OnConversationEnded;
         public delegate void ConversationEnded();
+        
 
 
 
@@ -160,27 +161,6 @@ namespace DialogueEditor
         // //         OnConversationEnded.Invoke();
         // //     SceneManager.LoadScene("Level");
         // // }
-        // public void EndConversation() 
-        // { 
-        //     SetState(eState.TransitioningDialogueOff); 
-
-        //     if (OnConversationEnded != null) 
-        //         OnConversationEnded.Invoke(); 
-
-        //     int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-
-        //     int nextSceneIndex = currentSceneIndex + 1;
-
-        //     if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
-        //     {
-        //         SceneManager.LoadScene(nextSceneIndex);
-        //     }
-        //     else
-        //     {
-        //         Debug.Log("Нет следующей сцены для загрузки.");
-        //     }
-        // }
-
         public void EndConversation() 
         { 
             SetState(eState.TransitioningDialogueOff); 
@@ -190,25 +170,49 @@ namespace DialogueEditor
 
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-            if (currentSceneIndex == 0) 
-            {
-                int nextSceneIndex = currentSceneIndex + 1;
-
-                if (nextSceneIndex < SceneManager.sceneCountInBuildSettings) 
+            int nextSceneIndex = currentSceneIndex + 1;
+            if (currentSceneIndex == 0) {
+                if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
                 {
                     SceneManager.LoadScene(nextSceneIndex);
                 }
-                else 
+                else
                 {
                     Debug.Log("Нет следующей сцены для загрузки.");
                 }
-            } 
-            else if (currentSceneIndex == 1) 
-            {
 
-                Debug.Log("End conversation without switching scenes.");
             }
+
         }
+
+        // public void EndConversation() 
+        // { 
+        //     SetState(eState.TransitioningDialogueOff); 
+
+        //     if (OnConversationEnded != null) 
+        //         OnConversationEnded.Invoke(); 
+
+        //     int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        //     if (currentSceneIndex == 0) 
+        //     {
+        //         int nextSceneIndex = currentSceneIndex + 1;
+
+        //         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings) 
+        //         {
+        //             SceneManager.LoadScene(Level);
+        //         }
+        //         else 
+        //         {
+        //             Debug.Log("Нет следующей сцены для загрузки.");
+        //         }
+        //     } 
+        //     else if (currentSceneIndex == 1) 
+        //     {
+
+        //         Debug.Log("End conversation without switching scenes.");
+        //     }
+        // }
         public void SelectNextOption()
         {
             int next = m_currentSelectedIndex + 1;

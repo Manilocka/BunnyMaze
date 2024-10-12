@@ -118,7 +118,7 @@ public class HealthScript : MonoBehaviour
 
     private void Die()
     {
-        ShowMessage("ВЫ УБИЛИ КОТЁНКА!!!!");
+        ShowMessage("ВЫ УБИЛИ КОТЁНКA!!!!");
         Destroy(cat); 
     }
 
